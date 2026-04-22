@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       deleted += keys.length
     }
     cursor = next
-  } while (cursor !== '0' && cursor !== 0)
+  } while (String(cursor) !== '0')
 
   return NextResponse.json({
     ok: true,
